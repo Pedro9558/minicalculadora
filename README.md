@@ -26,7 +26,9 @@ Um programa feito para base de estudos, uma mini calculadora que realiza alguns 
    - Recebe três valores *A*, *B* e *C*, sendo *A* diferente de *0*, e retorna nenhuma, uma ou mais raizes dependendo do resultado da função seguindo as equações:
   
    > f(x) = ax² + bx + c onde f(x) = 0
+   <br />
    > Δ = b² - 4ac
+   <br />
    > x = -b +- √Δ / 2a
    
 ## Exemplos de Testes
@@ -62,7 +64,7 @@ Selecione uma das operações abaixo:
 	Deseja continuar? Y/N
 	>> N
 	```
-3. **Identificar se o número é par ou ímpar**
+3. **Identificar se o número é par ou ímpar** <br />
 	*teste 1 - número inteiro normal*
 	```
 	>> 3
@@ -92,7 +94,7 @@ Selecione uma das operações abaixo:
 	>> -9
 	O resultado da função para A = 5 e B = -9 é: 1,800
 	```
-5. **Calcular a raiz de uma função de segundo grau**
+5. **Calcular a raiz de uma função de segundo grau** <br />
 	*teste 1 - resultado 2 raizes*
     ```
 	>> 5
