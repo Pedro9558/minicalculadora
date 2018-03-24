@@ -25,13 +25,9 @@ Um programa feito para base de estudos, uma mini calculadora que realiza alguns 
 5. **Calcular a raiz de uma função de segundo grau**
    - Recebe três valores *A*, *B* e *C*, sendo *A* diferente de *0*, e retorna nenhuma, uma ou mais raizes dependendo do resultado da função seguindo as equações:
   
-   > f(x) = ax² + bx + c onde f(x) = 0
-   
-   <br />
-   > Δ = b² - 4ac
-   
-   <br />
-   > x = -b +- √Δ / 2a
+   >f(x) = ax² + bx + c onde f(x) = 0
+   >Δ = b² - 4ac
+   >x = -b +- √Δ / 2a
    
    
 ## Exemplos de Testes
