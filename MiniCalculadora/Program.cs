@@ -124,7 +124,7 @@ namespace MiniCalculadora
                     {
                         Console.WriteLine("Digite um valor inteiro");
                         Input = Console.ReadLine();
-                        // Pede um numeral inteiro(Ainda irei trabalhar com doubles depois)
+                        // Pede um numeral inteiro, pois só funciona com inteiros
                         while (!IsNumberDouble(Input) || Input.Contains(".") || Input.Contains(","))
                         {
                             Console.WriteLine("Tente novamente! Desta vez um numeral inteiro!");
