@@ -8,6 +8,8 @@ Um programa feito para base de estudos, uma mini calculadora que realiza alguns 
 3. Identificar se um número é par ou ímpar
 4. Calcular a raiz de uma função de primeiro grau
 5. Calcular a raiz de uma função de segundo grau
+6. Calcular o fatorial de um número
+7. Capturar um número da sequência de Fibonacci
 
 ## Descrição das Operações
 
@@ -29,6 +31,13 @@ Um programa feito para base de estudos, uma mini calculadora que realiza alguns 
    >Δ = b² - 4ac, e
    >x = -b +- √Δ / 2a
    
+6. **Calcular o fatorial de um número**
+   - Recebe um determinado *número inteiro* digitado pelo usuário e retorna o fatorial desse número.
+   
+   >n!
+   
+7. **Capturar um número da sequência de Fibonacci**
+   - Recebe um determinado *número inteiro* digitado pelo usuário e retorna um número da sequência de Fibonacci na posição determinada pelo usuário
    
 ## Exemplos de Testes
 
@@ -41,6 +50,8 @@ Selecione uma das operações abaixo:
 3. Identificar se o número é par ou ímpar
 4. Calcular a raiz de uma função de primeiro grau
 5. Calcular a raiz de uma função de segundo grau
+6. Calcular o fatorial de um número
+7. Capturar um número da sequência de Fibonacci
 ```
 ***Testando Operações***
 1. **Calcular 10% de um número**
@@ -117,7 +128,7 @@ Selecione uma das operações abaixo:
 	Digite o valor de C
 	>> 2
 	O resultado da função para A = 8, B = 8 e C = 2 é: X = -0,500
-	Deseja Continuar? Y/N
+	Deseja continuar? Y/N
 	>> N
 	```
 	*teste 3 - resultado nenhuma raiz*
@@ -130,7 +141,24 @@ Selecione uma das operações abaixo:
 	Digite o valor de C
 	>> 8
 	A função A = 10, B = -4 e C = 8, não apresenta raiz!
-	Deseja continuar?
+	Deseja continuar? Y/N
 	>> N
 	```
-	
+6. **Calcular o fatorial de um número**
+	```
+	>> 6
+	Digite um número inteiro(até 20)
+	>> 7
+	Fatorial de 7: 5040
+	Deseja continuar? Y/N
+	>> N
+	```
+
+7. **Capturar um número da sequência de Fibonacci**
+	```
+	>> 7
+	Digite um valor inteiro(Entre 1 e 46)
+	>> 10
+	Número 10 da sequência de Fibonacci: 55
+	Deseja continuar? Y/N
+	```
