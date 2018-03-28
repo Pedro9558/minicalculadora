@@ -36,6 +36,8 @@ namespace MiniCalculadora
                 Console.WriteLine("3. Identificar se o número é par ou ímpar");
                 Console.WriteLine("4. Calcular a raiz de uma função de primeiro grau");
                 Console.WriteLine("5. Calcular a raiz de uma função de segundo grau");
+                Console.WriteLine("6. Calcular o fatorial de um número");
+                Console.WriteLine("7. Capturar um número da sequência de Fibonacci");
                 Input = Console.ReadLine();
                 while (Input.Length >= 18)
                 {
@@ -56,7 +58,7 @@ namespace MiniCalculadora
                     while (true)
                     {
                         // Caso esteja, prossiga adiante
-                        if (Escolha == 1 || Escolha == 2 || Escolha == 3 || Escolha == 4 || Escolha == 5) break;
+                        if (Escolha == 1 || Escolha == 2 || Escolha == 3 || Escolha == 4 || Escolha == 5 || Escolha == 6 || Escolha == 7) break;
                         // Caso não, repita todo procedimento anterior até sair um input válido
                         Console.WriteLine(OperacaoDesconhecida[r.Next(0, OperacaoDesconhecida.Length - 1)]);
                         Input = Console.ReadLine();
@@ -206,7 +208,7 @@ namespace MiniCalculadora
                         // Computando resultado
                         Console.WriteLine("O resultado da função para A = " + A + " e B = " + B + " é: " + String.Format("{0:n3}", Operacao1Grau(A, B)));
                     }
-                    //Escolha 5: Calcular a raiz de uma função de segundo grau
+                    // Escolha 5: Calcular a raiz de uma função de segundo grau
                     else if (Escolha == 5)
                     {
                         // Pede o valor de A
@@ -271,6 +273,61 @@ namespace MiniCalculadora
                         {
                             Console.WriteLine("O resultado da função para A = " + A + ", B = " + B + " e C = " + C + " é: X1 = " + String.Format("{0:n3}", X[0]) + " X2 = " + String.Format("{0:n3}", X[1]));
                         }
+                    }
+                    // Escolha 6: Fatorial de um número
+                    else if (Escolha == 6)
+                    {
+                        Console.WriteLine("Digite um valor inteiro(até 20)");
+                        Input = Console.ReadLine();
+                        // Pede um numeral inteiro, pois só funciona com inteiros
+                        while (!IsNumberDouble(Input) || Input.Contains(".") || Input.Contains(","))
+                        {
+                            Console.WriteLine("Tente novamente! Desta vez um numeral inteiro!");
+                            Input = Console.ReadLine();
+                        }
+                        long Temp = Convert.ToInt64(Input);
+                        // Limite temporário de 20
+                        while (Temp >= 21)
+                        {
+                            Console.WriteLine("A partir de 20, o fatorial fica instavel! Tente novamente");
+                            Input = Console.ReadLine();
+                            while (!IsNumberDouble(Input) || Input.Contains(".") || Input.Contains(","))
+                            {
+                                Console.WriteLine("Tente novamente! Desta vez um numeral inteiro!");
+                                Input = Console.ReadLine();
+                            }
+                            Temp = Convert.ToInt64(Input);
+                        }
+                        // Computa resultados
+                        Temp = Convert.ToInt64(Input);
+                        Console.WriteLine("Fatorial de " + Input + ": " + Fatorial(Temp));
+                    }
+                    // Escolha 7: Fibonacci
+                    else if (Escolha == 7) 
+                    {
+                        Console.WriteLine("Digite um valor inteiro(Entre 1 e 46)");
+                        Input = Console.ReadLine();
+                        // Pede um numeral inteiro, pois só funciona com inteiros
+                        while (!IsNumberDouble(Input) || Input.Contains(".") || Input.Contains(","))
+                        {
+                            Console.WriteLine("Tente novamente! Desta vez um numeral inteiro!");
+                            Input = Console.ReadLine();
+                        }
+                        // Computa resultados
+                        long Temp = Convert.ToInt64(Input);
+                        // O limite da sequencia é 46, pois a partir dai, ela fica instavel!
+                        while(Temp >= 47)
+                        {
+                            Console.WriteLine("A partir de 46, a sequência fica instavel! Tente novamente");
+                            Input = Console.ReadLine();
+                            while (!IsNumberDouble(Input) || Input.Contains(".") || Input.Contains(","))
+                            {
+                                Console.WriteLine("Tente novamente! Desta vez um numeral inteiro!");
+                                Input = Console.ReadLine();
+                            }
+                            Temp = Convert.ToInt64(Input);
+                        }
+                        Console.WriteLine("Número " + Input + " da sequência de Fibonacci: " + Fibonacci(Temp, false));
                     }
                 }
                 // Zona de escolha do usuário entre continuar ou não
@@ -373,6 +430,58 @@ namespace MiniCalculadora
         public static Boolean IsPair(double Num)
         {
             return Num % 2 == 0;
+        }
+        /// <summary>
+        /// Calcula o fatorial de um número
+        /// </summary>
+        /// <param name="Num"></param>
+        /// <returns>Retorna o valor do fatorial do número passado</returns>
+        public static long Fatorial(long Num)
+        {
+            if (Num == 1)
+                return Num;
+            return Num * Fatorial(Num - 1);
+        }
+        /// <summary>
+        /// Retorna um número na posição indicada da sequencia de Fibonacci
+        /// </summary>
+        /// <param name="Posicao"></param>
+        /// <returns>Retorna um número na posição indicada da sequencia de Fibonacci</returns>
+        public static long Fibonacci(long Posicao, bool MostrarSequencia)
+        {
+            // Sequencia inicia nessa variavel
+            var Temp = 1;
+            // Variavel que armazena o resultado em potencial
+            var Temp2 = 1;
+            var Num = 1;
+            // Caso seje as primeiras posições, o valor será sempre 1
+            if (Posicao == 1 || Posicao == 2) 
+            {
+                Num = Temp;
+            }
+            else
+            {
+                // Fica fazendo o calculo até chegar na posição
+                for (var X = 1; X <= Posicao; X++)
+                {
+                    // Mostra a sequencia no console
+                    if (MostrarSequencia)
+                    {
+                        Console.WriteLine(Temp2);
+                    }
+                    // Caso chegue na posição, o resultado potencial é atribuido ao retorno
+                    if (X == Posicao)
+                    {
+                        Num = Temp2;
+                    }
+                    else
+                    {
+                        Temp = Temp2 + Temp;
+                        Temp2 = Temp - Temp2;
+                    }
+                }
+            }
+            return Num;
         }
     }
 }
